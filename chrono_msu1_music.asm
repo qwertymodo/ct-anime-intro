@@ -633,6 +633,9 @@ scope TrackNeedLooping: {
 	// 3.14 To Far Away Times (Ending)
 	cmp.b #63
 	beq .noLooping
+	// FMV Audio
+	cmp.b #100
+	bcs .noLooping
 	lda.b #$03
 	rts
 .noLooping:

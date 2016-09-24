@@ -9,6 +9,7 @@
 //
 //***********************************************************************************
 
+include "msu1_music/chrono_msu1_music.asm"
 
 
 // ************************* Source ROM layout **************************
@@ -779,14 +780,14 @@ rts
 SetAudioTrackAndVol:
     php
     sep #$20
+    lda #$10
+    sta $7F1E00
+    lda #$64
+    sta $7F1E01             // set audio track no. = 100
+    lda FULL_VOLUME
+    sta $7F1E02             // set volume = max
     lda #$00
-    sta.l {MSU_TRACK}       // set audio track no. = 0
-    sta.l {MSU_TRACK}+1
-
--;  lda.l {MSU_STATUS}
-    bvs -                   // wait for audio port not busy
-    lda #$ff
-    sta.l {MSU_VOLUME}      // set volume = max
+    sta {MSU_CONTROL}
     plp
 rts
 
@@ -794,12 +795,10 @@ rts
 
 StartAudio:
     php
-    sep #$20
     lda.l {MSU_STATUS}
-    and #$10                // audio playing?
+    and #$10
     bne +
-    lda #$01                // no, play audio (no pause, no repeat)
-    sta.l {MSU_CONTROL}
+    jsl MSU_Main
 +;  plp
 rts
 

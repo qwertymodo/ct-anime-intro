@@ -18,9 +18,9 @@ If you hate the fact that dungeon music restarts at the beginning with no-resume
 = Installation =
 ================
 1. Buy Chrono Symphony album in FLAC format (http://www.thechronosymphony.com/). Extract them all to a folder.
-2. Run make_music_pack.bat to create the music_pack
+2. Run convert_tracks.bat to create the music_pack
 3. Create a copy of your original ROM named chrono_msu1.sfc
-3. Patch the ROM using Lunar IPS or Floating IPS (http://www.smwcentral.net/?p=viewthread&t=78938)
+4. Patch the ROM using Lunar IPS or Floating IPS (http://www.smwcentral.net/?p=viewthread&t=78938)
 
 Please support the original author of the album. I known some sites will host the complete music pack in PCM format, I do not endorse them at all.
 
@@ -53,6 +53,7 @@ Launch the game and voilà, enjoy !
 ===========
 = Credits =
 ===========
+* Qwertymodo - Conversion script update & video patch merge
 * DarkShock - ASM hacking & coding, music editing
 * Blake Robinson - Music reorchestration
 
@@ -68,19 +69,6 @@ Source is availabe on GitHub: https://github.com/mlarouche/ChronoTrigger-MSU1
 To compile the hack you need
 
 * bass v14 (https://web.archive.org/web/20140710190910/http://byuu.org/files/bass_v14.tar.xz)
-* flac (https://xiph.org/flac/download.html)
 * sox (http://sox.sourceforge.net/)
+* normalize-audio (http://normalize.nongnu.org/)
 * wav2msu (https://github.com/mlarouche/wav2msu)
-
-To distribute the hack you need
-
-* uCON64 (http://ucon64.sourceforge.net/)
-* 7-Zip (http://www.7-zip.org/)
-
-create_pcm.bat create the .pcm from the WAV files
-decode_flac.bat decode the FLAC from the Chrono Symphony album
-edit_audio.bat edit the audio using SoX
-distribute.bat distribute the patch
-make_music_pack.bat calls required bats for creating the music pack.
-make.bat assemble the patch
-make_all.bat does everything

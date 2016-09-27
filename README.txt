@@ -6,7 +6,7 @@ This hack adds CD quality audio to Chrono Trigger using the MSU-1 chip invented 
 
 The hack has been tested on bsnes-plus v073+1, higan 096 and SD2SNES. BSNES 070, 075 is NOT RECOMMENDED, use bsnes-plus v073.
 
-For those playing on SD2SNES, you need to exit to menu using L+R+Select+X shortcut in order to save your game.
+For those playing on SD2SNES, you need to exit to menu using L+R+Select+X shortcut or hit the physical reset button on the console after saving in order to write the save back to the SD card.
 
 Note they are two patches
 - chrono_msu1.ips for emulators prior to higan v096 and SD2SNES without resume support
